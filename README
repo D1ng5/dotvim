@@ -19,15 +19,14 @@ First stepps:
 
 
 	add Submodules for instance pathogen
-			cd ~/.vim	
+	    cd ~/.vim	
                 						                           folder of the submodule
-		 git submodule add git://github.com/tpope/vim-pathogen.git autoload/pathogen
-         git add .
+        git submodule add git://github.com/tpope/vim-pathogen.git autoload/pathogen
+        git add .
 
 (only for pathogen  
     ln -s autoload/pathogen/autoload/pathogen.vim autoload/pathogen.vim
 ) 
-         git commit -m "install patrhogen.vim in the autoload folder"
-         
+         git commit -m "install patrhogen.vim in the autoload folder"   
          git push 
           
