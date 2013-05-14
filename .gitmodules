@@ -10,3 +10,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = git://github.com/vim-scripts/UltiSnips.git
+[submodule "bundle/latexforvim"]
+	path = bundle/latexforvim
+	url = git://github.com/jcf/vim-latex.git
