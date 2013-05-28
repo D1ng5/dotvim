@@ -21,9 +21,48 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 " My Vim config
 set backupdir=$HOME/.vim/vimtmp//
 set directory=$HOME/.vim/vimviewdir//
-autocmd BufWinLeave ?* mkview
-autocmd BufWinEnter ?* silent loadview
+
+au BufWritePost,BufLeave,WinLeave ?* mkview
+au BufReadPre ?* silent loadview
+
+
+
+"let g:sekipview files = [
+            "\ '[EXAMPLE PLUGIN BUFFER]'
+"            \ ]
+"function! MakeViewCheck()
+"    if has('quickfix') && &buftype =~ 'nofile'
+"        Buffer is marked as not a file
+"        return 0
+"    endif
+"    if empty(glob(expand('%:p')))
+"        " File does not exist on disk
+"        return 0
+"    endif
+"    if len($TEMP) && expand('%:p:h') == $TEMP
+"        " We're        in a     temp dir
+"        return 0
+"    endif
+"    if len($TMP) && expand('%:p:h') == $TMP
+"        "        Also        in        temp        dir
+"        return 0
+"    endif
+"    if index(g:skipview_files,expand('%')) >= 0
+"        "        File        is        in        skip        list
+"        return 0
+"    endif
+"    return 1
+"endfunction
+"
+"augroup vimrcAutoView
+"    autocmd!
+"    "    Autosave    &    Load    Views.
+"    autocmd BufWritePost,BufLeave,WinLeave ?* if MakeViewCheck() | mkview | endif
+"    autocmd BufWinEnter ?* if MakeViewCheck() | silent loadview | endif
+"augroup end
+
 set nocompatible " Disable vi-compatibilityi
+
 set background=dark
 
 set smartindent
